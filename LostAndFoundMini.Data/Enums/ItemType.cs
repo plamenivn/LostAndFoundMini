@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace LostAndFoundMini.Data.Enums
 {
-    internal class ItemType
+    public enum ItemType
     {
+        Lost,
+        Found
     }
 }
