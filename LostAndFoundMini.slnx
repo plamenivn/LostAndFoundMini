@@ -1,3 +1,4 @@
 <Solution>
+  <Project Path="LostAndFoundMini.Data/LostAndFoundMini.Data.csproj" Id="49968a86-5fcc-462d-9e7c-10a4f3c1635b" />
   <Project Path="LostAndFoundMini.Web/LostAndFoundMini.Web.csproj" />
 </Solution>
