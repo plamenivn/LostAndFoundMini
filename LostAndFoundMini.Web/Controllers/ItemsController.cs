@@ -1,4 +1,4 @@
-﻿using LostAndFoundMini.Web.Models;
+﻿using LostAndFoundMini.Data.Entities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LostAndFoundMini.Web.Controllers

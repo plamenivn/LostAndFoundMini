@@ -1,4 +1,4 @@
-﻿@model LostAndFoundMini.Web.Models.Item
+﻿@model LostAndFoundMini.Data.Entities.Item
 
 @{
     ViewData["Title"] = "Добавяне на обява";
@@ -15,10 +15,8 @@
 
     <div class="form-group mb-3">
         <label asp-for="Type" class="control-label">Вид</label>
-        <select asp-for="Type" class="form-control">
+        <select asp-for="Type" class="form-control" asp-items="Html.GetEnumSelectList<LostAndFoundMini.Data.Enums.ItemType>()">
             <option value="">-- Изберете вид --</option>
-            <option value="Изгубено">Изгубено</option>
-            <option value="Намерено">Намерено</option>
         </select>
         <span asp-validation-for="Type" class="text-danger"></span>
     </div>
