@@ -1,4 +1,5 @@
 ﻿using LostAndFoundMini.Data.Entities;
+using LostAndFoundMini.Services.DTOs.Items;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace LostAndFoundMini.Services.Contracts
 {
     public interface IItemService
     {
-        IEnumerable<Item> GetAll();
+        Task<List<ItemListDto>> GetAllAsync();
         Item? GetById(int id);
         void Create(Item item);
     }
