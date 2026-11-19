@@ -10,6 +10,11 @@ namespace LostAndFoundMini.Web.Controllers
     {
         private readonly IItemService _itemService;
 
+        public ItemsController(IItemService itemService)
+        {
+            _itemService = itemService;
+        }
+
         public async Task<IActionResult> Index()
         {
             var items = await _itemService.GetAllAsync();
