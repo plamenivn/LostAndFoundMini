@@ -18,4 +18,8 @@
     <ProjectReference Include="..\LostAndFoundMini.Services\LostAndFoundMini.Services.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
+  </ItemGroup>
+
 </Project>
