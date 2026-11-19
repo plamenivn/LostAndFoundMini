@@ -10,8 +10,4 @@
     <ProjectReference Include="..\LostAndFoundMini.Data\LostAndFoundMini.Data.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="DTOs\Items\" />
-  </ItemGroup>
-
 </Project>
