@@ -29,6 +29,8 @@ namespace LostAndFoundMini.Web.Controllers
         {
             if (ModelState.IsValid)
             {
+                _context.Items.Add(item);
+                _context.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(item);
