@@ -1,10 +1,18 @@
-﻿using LostAndFoundMini.Data.Entities;
+﻿using LostAndFoundMini.Data;
+using LostAndFoundMini.Data.Entities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LostAndFoundMini.Web.Controllers
 {
     public class ItemsController : Controller
     {
+        private readonly ItemDbContext _context;
+
+        public ItemsController(ItemDbContext context)
+        {
+            _context = context;
+        }
+
         public IActionResult Index()
         {
             return View();
