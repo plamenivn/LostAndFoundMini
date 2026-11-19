@@ -8,3 +8,34 @@
 <p>Тук ще се показват обявите за изгубени и намерени вещи.</p>
 
 <a href="/items/create" class="btn btn-primary">Добави нова обява</a>
+
+@if (!Model.Any())
+{
+    <p>Няма добавени обяви все още.</p>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Заглавие</th>
+                <th>Вид</th>
+                <th>Място</th>
+                <th>Дата</th>
+                <th>Описание</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Title</td>
+                    <td>@item.Type</td>
+                    <td>@item.Location</td>
+                    <td>@item.Date.ToShortDateString()</td>
+                    <td>@item.Description</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
