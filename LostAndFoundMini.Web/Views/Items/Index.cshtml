@@ -1,4 +1,4 @@
-﻿@model IEnumerable<LostAndFoundMini.Data.Entities.Item>
+﻿@model ItemsIndexViewModel
 
 @{
     ViewData["Title"] = "Изгубени и намерени вещи";
@@ -7,9 +7,9 @@
 <h2>Списък с обяви</h2>
 <p>Тук ще се показват обявите за изгубени и намерени вещи.</p>
 
-<a href="/items/create" class="btn btn-primary">Добави нова обява</a>
+<a asp-controller="Items" asp-action="Create" class="btn btn-primary">Добави нова обява</a>
 
-@if (!Model.Any())
+@if (!Model.Items.Any())
 {
     <p>Няма добавени обяви все още.</p>
 }
@@ -18,22 +18,22 @@ else
     <table class="table table-striped">
         <thead>
             <tr>
+                <th>#</th>
                 <th>Заглавие</th>
                 <th>Вид</th>
                 <th>Място</th>
                 <th>Дата</th>
-                <th>Описание</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model)
+            @foreach (var item in Model.Items)
             {
                 <tr>
+                    <td>@item.Id</td>
                     <td>@item.Title</td>
                     <td>@item.Type</td>
                     <td>@item.Location</td>
                     <td>@item.Date.ToShortDateString()</td>
-                    <td>@item.Description</td>
                 </tr>
             }
         </tbody>
