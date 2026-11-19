@@ -1,6 +1,7 @@
 ﻿using LostAndFoundMini.Data;
 using LostAndFoundMini.Data.Entities;
 using LostAndFoundMini.Services.Contracts;
+using LostAndFoundMini.Web.ViewModels.Items;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LostAndFoundMini.Web.Controllers
@@ -9,15 +10,16 @@ namespace LostAndFoundMini.Web.Controllers
     {
         private readonly IItemService _itemService;
 
-        public ItemsController(IItemService itemService)
+        public async Task<IActionResult> Index()
         {
-            _itemService = itemService;
-        }
+            var items = await _itemService.GetAllAsync();
 
-        public IActionResult Index()
-        {
-            var items = _itemService.GetAll();
-            return View(items);
+            var viewModel = new ItemsIndexViewModel
+            {
+                Items = items
+            };
+
+            return View(viewModel);
         }
 
         public IActionResult Create()
