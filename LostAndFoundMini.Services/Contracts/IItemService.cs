@@ -9,6 +9,8 @@ namespace LostAndFoundMini.Services.Contracts
 {
     public interface IItemService
     {
-       
+        IEnumerable<Item> GetAll();
+        Item? GetById(int id);
+        void Create(Item item);
     }
 }
