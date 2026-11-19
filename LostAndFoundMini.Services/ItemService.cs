@@ -1,6 +1,8 @@
 ﻿using LostAndFoundMini.Data;
 using LostAndFoundMini.Data.Entities;
 using LostAndFoundMini.Services.Contracts;
+using LostAndFoundMini.Services.DTOs.Items;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,9 +20,18 @@ namespace LostAndFoundMini.Services
             _context = context;
         }
 
-        public IEnumerable<Item> GetAll()
+        public async Task<List<ItemListDto>> GetAllAsync()
         {
-            return _context.Items.ToList();
+            return await _context.Items
+                .Select(i => new ItemListDto
+                {
+                    Id = i.Id,
+                    Title = i.Title,
+                    Type = i.Type,
+                    Location = i.Location,
+                    Date = i.Date
+                })
+                .ToListAsync();
         }
 
         public Item? GetById(int id)
