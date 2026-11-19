@@ -15,6 +15,7 @@ namespace LostAndFoundMini.Web.Controllers
 
         public IActionResult Index()
         {
+            var items = _context.Items.ToList();
             return View();
         }
 
