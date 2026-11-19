@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\LostAndFoundMini.Data\LostAndFoundMini.Data.csproj" />
+    <ProjectReference Include="..\LostAndFoundMini.Services\LostAndFoundMini.Services.csproj" />
   </ItemGroup>
 
 </Project>
